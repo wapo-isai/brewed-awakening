@@ -1,0 +1,46 @@
+.containerMain {
+  background-color: #ffffff;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  color: rgb(70, 70, 70);
+}
+
+.navList {
+  margin-top: 16px;
+}
+
+.navList a {
+  text-decoration: none;
+  display: block;
+  margin: 16px 0;
+  color: rgb(70, 70, 70);
+  padding: 8px 4px;
+  padding-left: 16px;
+  display: flex;
+  /* justify-content: center; */
+  gap: 8px;
+}
+
+.navList a:hover {
+  background-color: rgb(248, 253, 250);
+  color: rgb(140, 218, 149);
+  border-right: 3px solid rgb(140, 218, 149);
+}
+
+.specialButton {
+  border: none;
+  font-size: 16px;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  background-image: linear-gradient(
+    to right,
+    rgb(112, 204, 167),
+    rgb(124, 209, 148),
+    rgb(140, 214, 127)
+  );
+  margin: 0 20px;
+  cursor: pointer;
+}

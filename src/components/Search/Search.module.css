@@ -1,0 +1,35 @@
+.searchContainer {
+  box-sizing: border-box;
+  position: relative;
+  margin-top: 16px;
+}
+
+.searchIcon {
+  position: absolute;
+  top: 4px;
+  left: 0;
+}
+
+.searchContainer input {
+  width: calc(100% - 40px);
+  border: none;
+  background-color: rgb(245, 245, 245);
+  border-bottom: 1px solid rgb(190, 190, 190);
+  padding: 8px 16px 8px 24px;
+  font-size: 16px;
+}
+
+.searchButton {
+  position: absolute;
+  top: 0;
+  right: 4px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  height: 100%;
+  font-size: 16px;
+}
+
+.searchButton:active {
+  background-color: rgb(190, 190, 190);
+}

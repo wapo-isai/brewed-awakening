@@ -1,4 +1,5 @@
 .mainGrid {
   display: grid;
   grid-template-columns: 20% 1fr 1fr;
+  gap: 16px;
 }

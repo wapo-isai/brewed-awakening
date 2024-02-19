@@ -1,0 +1,31 @@
+.ordersContainer {
+  background-color: #fff;
+  height: fit-content;
+  /* width: fit-content; */
+}
+.ordersContainer h3 {
+  padding-left: 16px;
+  font-weight: 400;
+}
+
+table {
+  border-collapse: collapse;
+}
+.orderTable thead th {
+  border-bottom: 2px solid rgb(245, 245, 245);
+}
+
+.orderTable th,
+td {
+  padding: 8px;
+}
+
+.orderTable thead th {
+  width: 30%;
+  font-weight: 400;
+  color: rgb(190, 190, 190);
+}
+
+.orderTable tbody td {
+  text-align: center;
+}

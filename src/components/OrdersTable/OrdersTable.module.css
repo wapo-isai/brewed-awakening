@@ -1,6 +1,8 @@
 .ordersContainer {
   background-color: #fff;
   height: fit-content;
+  padding: 8px;
+  margin-top: 16px;
   /* width: fit-content; */
 }
 .ordersContainer h3 {
@@ -28,4 +30,10 @@ td {
 
 .orderTable tbody td {
   text-align: center;
+}
+
+@media screen and (max-width: 350px) {
+  .ordersContainer {
+    overflow-y: scroll;
+  }
 }

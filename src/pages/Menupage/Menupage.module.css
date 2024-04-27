@@ -1,0 +1,13 @@
+.menuGrid {
+  display: grid;
+  grid-template-columns: 20% 1fr;
+  height: 100vh;
+  gap: 32px;
+}
+
+.menuItems {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 32px;
+}

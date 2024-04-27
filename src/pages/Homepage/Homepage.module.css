@@ -1,5 +1,139 @@
+/* body {
+  overflow-y: hidden;
+} */
+
 .mainGrid {
   display: grid;
   grid-template-columns: 20% 1fr 1fr;
-  gap: 16px;
+  gap: 32px;
+  margin-right: 32px;
+}
+
+.container {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 4;
+}
+
+.menuBars {
+  display: none;
+  cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.7s;
+}
+
+.change .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+  opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
+}
+
+.overlay {
+  position: absolute; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+
+@media screen and (max-width: 1170px) {
+  .mainGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .middle {
+    margin-top: 50px;
+  }
+
+  .menuBars {
+    display: revert;
+  }
+
+  .asideWrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(-1000px);
+    z-index: 3;
+    width: 50%;
+    height: 100%;
+    transition: 0.7s;
+  }
+
+  .overlayChange {
+    position: fixed;
+    display: revert;
+  }
+
+  .sticky {
+    position: sticky;
+  }
+
+  .asideWrapperAnimation {
+    transform: revert;
+    transition: 0.7s;
+  }
+}
+
+@media screen and (max-width: 775px) {
+  .mainGrid {
+    display: flex;
+    flex-direction: column;
+    margin: 0 16px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .asideWrapper {
+    width: 75%;
+  }
+}
+
+.specialtyCard img {
+  display: block;
+  margin: 0 auto;
+  width: 415px;
+  height: 415px;
+}
+
+.specialtyCard {
+  margin-top: 32px;
+  background-color: white;
+  padding: 12px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.specialtyCard span {
+  display: block;
+  text-align: center;
+  font-size: 18px;
+}
+
+.specialtyCard p {
+  font-size: 22px;
 }

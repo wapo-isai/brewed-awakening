@@ -6,6 +6,7 @@ import Gear from "../../assets/svgs/gear.svg";
 import Location from "../../assets/svgs/location.svg";
 import Navigate from "../../assets/svgs/navigate.svg";
 import Logo from "../../assets/coffee-logo.png";
+import {Link} from "react-router-dom";
 
 function Aside() {
   return (
@@ -15,17 +16,18 @@ function Aside() {
         <p>Brewed-Awakening</p>
       </span>
       <nav className={styles.navList}>
-        <a href="#">
+        <Link to="/">
           <img src={Gear} alt="gear icon" />
-          Dashboard
-        </a>
-        <a href="#">
-          <img src={Coffee} alt="coffee icon" /> Orders
-        </a>
-        <a href="#">
+          Home
+        </Link>
+        <Link to="/orders">
+          <img src={Coffee} alt="coffee icon" />
+          Orders
+        </Link>
+        <Link to="/menu">
           <img src={Location} alt="location icon" />
-          Restaurants
-        </a>
+          Menu
+        </Link>
         <a href="#">
           <img src={Users} alt="users icon" />
           Drivers

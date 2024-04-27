@@ -1,0 +1,40 @@
+.itemWrapper {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: white;
+  width: 300px;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 20px;
+}
+
+.itemWrapper img {
+  width: 100%;
+}
+
+.imgWrapper {
+  margin-left: -12px;
+  margin-right: -12px;
+}
+
+.purchaseArea {
+  display: flex;
+  justify-content: space-between;
+}
+
+.purchaseArea button {
+  background-color: rgb(53, 53, 53);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  height: 64px;
+  width: 128px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.purchaseArea button img {
+  width: 32px;
+}

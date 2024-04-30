@@ -9,39 +9,67 @@ import Logo from "../../assets/coffee-logo.png";
 import {Link} from "react-router-dom";
 
 function Aside() {
+  const [isOpenBars, setIsOpenBars] = React.useState(true);
   return (
-    <div className={styles.containerMain}>
-      <span className={styles.logoSection}>
-        <img src={Logo} className={styles.logo} />
-        <p>Brewed-Awakening</p>
-      </span>
-      <nav className={styles.navList}>
-        <Link to="/">
-          <img src={Gear} alt="gear icon" />
-          Home
-        </Link>
-        <Link to="/orders">
-          <img src={Coffee} alt="coffee icon" />
-          Orders
-        </Link>
-        <Link to="/menu">
-          <img src={Location} alt="location icon" />
-          Menu
-        </Link>
-        <a href="#">
-          <img src={Users} alt="users icon" />
-          Drivers
-        </a>
-      </nav>
+    <>
+      <div
+        className={`${styles.asideWrapper} ${
+          isOpenBars ? "" : styles.asideWrapperAnimation
+        }`}
+      >
+        <div className={styles.containerMain}>
+          <span className={styles.logoSection}>
+            <img src={Logo} className={styles.logo} />
+            <p>Brewed-Awakening</p>
+          </span>
+          <nav className={styles.navList}>
+            <Link to="/">
+              <img src={Gear} alt="gear icon" />
+              Home
+            </Link>
+            <Link to="/orders">
+              <img src={Coffee} alt="coffee icon" />
+              Orders
+            </Link>
+            <Link to="/menu">
+              <img src={Location} alt="location icon" />
+              Menu
+            </Link>
+            <Link to="/about-us">
+              <img src={Users} alt="users icon" />
+              About Us
+            </Link>
+          </nav>
 
-      <p>Done for the day?</p>
-      <button className={styles.specialButton}>
-        <img src={Navigate} />
-        Send Daily Report
-      </button>
+          <div className={styles.logoffArea}>
+            <p>Done for the day?</p>
+            <button className={styles.specialButton}>
+              <img src={Navigate} />
+              Logout
+            </button>
 
-      <p>Isai Martinez</p>
-    </div>
+            <p>Isai Martinez</p>
+          </div>
+        </div>
+      </div>
+      <div
+        className={`${styles.overlay} ${
+          isOpenBars ? "" : styles.overlayChange
+        }`}
+      ></div>
+      <div
+        className={`${styles.container} ${
+          isOpenBars ? styles.menuBars : styles.change
+        }`}
+        onClick={() => {
+          setIsOpenBars(!isOpenBars);
+        }}
+      >
+        <div className={styles.bar1}></div>
+        <div className={styles.bar2}></div>
+        <div className={styles.bar3}></div>
+      </div>
+    </>
   );
 }
 

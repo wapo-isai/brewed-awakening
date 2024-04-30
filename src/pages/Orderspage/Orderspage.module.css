@@ -1,0 +1,53 @@
+.ordersGrid {
+  display: grid;
+  grid-template-columns: 20% 1fr;
+  height: 100vh;
+  gap: 32px;
+  margin-right: 32px;
+}
+
+.ordersMain {
+  margin-right: 32px;
+  margin-top: 32px;
+}
+
+.progressBarArea {
+  width: 100%;
+  /* height: 50px; */
+  background-color: white;
+  padding: 16px;
+}
+
+.progressBar {
+  width: 100%;
+  height: 30px;
+  background-color: rgb(123, 126, 130);
+}
+
+.progressBar div {
+  height: 100%;
+  width: 20%;
+  background-image: linear-gradient(
+    to right,
+    rgb(112, 204, 167),
+    rgb(124, 209, 148),
+    rgb(140, 214, 127)
+  );
+}
+
+.totalDrinks {
+  text-align: end;
+}
+
+.ordersTableArea {
+  background-color: white;
+  margin-top: 32px;
+  width: 100%;
+  padding: 16px;
+}
+
+@media screen and (max-width: 1170px) {
+  .ordersGrid {
+    display: initial;
+  }
+}

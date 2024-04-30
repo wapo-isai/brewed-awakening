@@ -19,6 +19,7 @@
 .purchaseArea {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .purchaseArea button {

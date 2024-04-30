@@ -7,42 +7,18 @@ import OfferCard from "../../components/OfferCard/OfferCard";
 import VelvetItem from "../../assets/menu-items/velvet-mocha.webp";
 
 function Homepage() {
-  const [isOpenBars, setIsOpenBars] = React.useState(true);
-
   return (
     <div className={styles.mainGrid}>
-      <div
-        className={`${styles.overlay} ${
-          isOpenBars ? "" : styles.overlayChange
-        }`}
-      ></div>
-      <div
-        className={`${styles.container} ${
-          isOpenBars ? styles.menuBars : styles.change
-        }`}
-        onClick={() => {
-          setIsOpenBars(!isOpenBars);
-        }}
-      >
-        <div className={styles.bar1}></div>
-        <div className={styles.bar2}></div>
-        <div className={styles.bar3}></div>
-      </div>
-
-      <div
-        className={`${styles.asideWrapper} ${
-          isOpenBars ? "" : styles.asideWrapperAnimation
-        }`}
-      >
-        <Aside />
-      </div>
+      <Aside />
 
       <div className={styles.middle}>
         <Search />
         <OrdersTable />
         <div className={styles.specialtyCard}>
           <h3>Todays Special – only $6.99</h3>
-          <img src={VelvetItem} />
+          <div className={styles.imgContainer}>
+            <img src={VelvetItem} />
+          </div>
           <span>
             <strong>Velvet Mocha</strong>
           </span>

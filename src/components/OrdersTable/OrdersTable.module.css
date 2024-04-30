@@ -1,9 +1,10 @@
 .ordersContainer {
   background-color: #fff;
   height: fit-content;
-  padding: 8px;
+  padding: 16px;
   margin-top: 16px;
-  /* width: fit-content; */
+  width: calc(100% - 32px);
+  border: #000 1px solid;
 }
 .ordersContainer h3 {
   padding-left: 16px;

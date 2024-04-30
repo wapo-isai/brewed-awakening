@@ -1,0 +1,39 @@
+.aboutUsGrid {
+  display: grid;
+  grid-template-columns: 20% 1fr;
+  height: 100vh;
+  gap: 32px;
+}
+
+.aboutUsBody {
+  margin: 32px;
+  margin-left: 0;
+  padding: 24px;
+  background-color: white;
+  line-height: 1.5;
+}
+
+.aboutUsBody img {
+  height: 500px;
+  display: block;
+  line-height: 0;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1170px) {
+  .aboutUsGrid {
+    display: initial;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .imgContainer {
+    /* width: 100%; */
+    margin-left: -24px;
+    margin-right: -24px;
+  }
+
+  .imgContainer img {
+    width: 100%;
+  }
+}

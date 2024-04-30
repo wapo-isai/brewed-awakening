@@ -9,7 +9,9 @@ import {coffeeItems} from "../../coffee-items";
 function Menupage() {
   return (
     <div className={styles.menuGrid}>
+      {/* <div className={styles.asideWrapper}> */}
       <Aside />
+      {/* </div> */}
       <div>
         <h1>Menu items</h1>
         <div className={styles.menuItems}>

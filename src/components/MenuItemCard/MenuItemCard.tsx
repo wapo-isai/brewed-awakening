@@ -22,18 +22,19 @@ function MenuItemCard({
       <span>
         <strong>{drinkName}</strong>
       </span>
+      <h3>{price}</h3>
+
+      <div className={styles.imgWrapper}>
+        <img src={source} />
+      </div>
+
       <div className={styles.purchaseArea}>
-        <h3>{price}</h3>
+        <em>{calories} cals</em>
         <button>
           <img src={Cart} />
           Add To Cart
         </button>
       </div>
-      <div className={styles.imgWrapper}>
-        <img src={source} />
-      </div>
-
-      <em>{calories} cals</em>
       <p>{description}</p>
     </div>
   );

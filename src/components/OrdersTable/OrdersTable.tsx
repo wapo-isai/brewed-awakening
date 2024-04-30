@@ -4,7 +4,7 @@ import styles from "./OrdersTable.module.css";
 function OrdersTable() {
   return (
     <div className={styles.ordersContainer}>
-      <h3>Orders</h3>
+      <h2>Orders</h2>
 
       <table className={styles.orderTable}>
         <thead>

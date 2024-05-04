@@ -1,31 +1,71 @@
 import {createSlice} from "@reduxjs/toolkit";
 import type {PayloadAction} from "@reduxjs/toolkit";
+import {updateCache} from "../../utils/updateCache";
+
+export interface CartItem {
+  id: number;
+  amount: number;
+}
 
 export interface CartState {
-  value: Array<number>;
+  value: Array<CartItem>;
 }
 
 const initialState: CartState = {
   value: [],
 };
 
+// function updateCartCache() {
+//   for (const [key, value] of Object.entries(state.value)) {
+//     tempCheckoutItems.push({
+//       id: Number(key),
+//       amount: Number(value),
+//     });
+//   }
+//   localStorage.setItem("cartItems", JSON.stringify(state.value));
+// }
 export const cartSlice = createSlice({
   name: "counter",
   initialState,
   reducers: {
-    addItem: (state, action: PayloadAction<number>) => {
+    addItem: (state, action: PayloadAction<CartItem>) => {
       state.value.push(action.payload);
+      updateCache(state.value);
     },
-    removeItem: (state, action: PayloadAction<number>) => {
-      const index = state.value.indexOf(action.payload);
-      state.value.splice(index);
+    removeItem: (state, action: PayloadAction<CartItem>) => {
+      let index;
+      state.value.forEach((element, idx) => {
+        if (element.id == action.payload.id) {
+          index = idx;
+        }
+      });
+      state.value.splice(index ? index : 0, 1);
+      updateCache(state.value);
     },
-    setCart: (state, action: PayloadAction<Array<number>>) => {
+    setCart: (state, action: PayloadAction<Array<CartItem>>) => {
       state.value = action.payload;
+      updateCache(state.value);
+    },
+    increment: (state, action: PayloadAction<number>) => {
+      for (let index = 0; index < state.value.length; index++) {
+        if (state.value[index].id == action.payload) {
+          state.value[index].amount++;
+        }
+      }
+      updateCache(state.value);
+    },
+    decrement: (state, action: PayloadAction<number>) => {
+      for (let index = 0; index < state.value.length; index++) {
+        if (state.value[index].id == action.payload) {
+          state.value[index].amount--;
+        }
+      }
+      updateCache(state.value);
     },
   },
 });
 
-export const {addItem, removeItem, setCart} = cartSlice.actions;
+export const {addItem, removeItem, setCart, increment, decrement} =
+  cartSlice.actions;
 
 export default cartSlice.reducer;

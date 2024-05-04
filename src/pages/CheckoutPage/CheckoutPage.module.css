@@ -1,0 +1,88 @@
+.mainFlexContainer {
+  display: flex;
+  flex-direction: row;
+  margin: 16px;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  background-color: white;
+  position: relative;
+}
+
+.imgContainer img {
+  width: 165px;
+  display: block;
+}
+
+.descriptionArea {
+  margin-left: 16px;
+  margin-top: 16px;
+}
+
+.descriptionArea p {
+  color: rgba(0, 0, 0, 0.3);
+  font-weight: 600;
+}
+
+.priceArea {
+  margin-left: auto;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  text-align: center;
+}
+
+.buttonArea span {
+  display: block;
+  margin: 4px 0;
+}
+
+.buttonArea button {
+  font-size: 18px;
+  background-color: black;
+  color: white;
+  border: none;
+  margin: 8px 4px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.totalPrice {
+  margin-left: 16px;
+}
+
+.specialButton {
+  display: flex;
+  align-items: center;
+  border: none;
+  font-size: 16px;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  background-image: linear-gradient(
+    to right,
+    rgb(112, 204, 167),
+    rgb(124, 209, 148),
+    rgb(140, 214, 127)
+  );
+
+  cursor: pointer;
+}
+
+.logoArea img {
+  width: 100px;
+}
+.flexContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.flexContainer button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.flexContainer img {
+  width: 80px;
+}

@@ -5,8 +5,9 @@ import Menupage from "./pages/Menupage/Menupage";
 import Orderspage from "./pages/Orderspage/Orderspage";
 import AboutUsPage from "./pages/AboutUsPage/AboutUsPage";
 import {useDispatch} from "react-redux";
-import {setCart} from "./features/cart/cartSlice";
+import {CartItem, setCart} from "./features/cart/cartSlice";
 import CheckoutPage from "./pages/CheckoutPage/CheckoutPage";
+import {getCartStateFromCache} from "./utils/getCartStateFromCache";
 
 function App() {
   const dispatch = useDispatch();
@@ -18,9 +19,9 @@ function App() {
       tempCartItems = JSON.parse(localStorage.getItem("cartItems"));
     }
 
-    if (tempCartItems.length > 0) {
-      dispatch(setCart([...tempCartItems]));
-    }
+    // console.log(counts);
+
+    dispatch(setCart(getCartStateFromCache(tempCartItems)));
   }, []);
   return (
     <>
@@ -31,6 +32,10 @@ function App() {
           <Route path="/orders" element={<Orderspage />} />
           <Route path="/about-us" element={<AboutUsPage />} />
           <Route path="/checkout" element={<CheckoutPage />} />
+          <Route
+            path="/*"
+            element={<div>404 Error, this page doesn't exist</div>}
+          />
         </Routes>
       </Router>
     </>

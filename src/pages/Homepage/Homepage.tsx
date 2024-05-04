@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./Homepage.module.css";
 import Aside from "../../components/Aside/Aside";
 import OrdersTable from "../../components/OrdersTable/OrdersTable";

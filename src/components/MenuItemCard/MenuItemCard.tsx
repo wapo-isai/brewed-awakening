@@ -3,6 +3,7 @@ import Cart from "../../assets/svgs/cart.svg";
 
 import {useDispatch} from "react-redux";
 import {setCart} from "../../features/cart/cartSlice";
+import {getCartStateFromCache} from "../../utils/getCartStateFromCache";
 
 type Props = {
   id: number;
@@ -44,7 +45,7 @@ function MenuItemCard({
             }
             tempArray = [...tempArray, id];
 
-            dispatch(setCart([...tempArray]));
+            dispatch(setCart(getCartStateFromCache(tempArray)));
 
             localStorage.setItem("cartItems", JSON.stringify(tempArray));
           }}

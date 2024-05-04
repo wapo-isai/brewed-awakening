@@ -6,10 +6,17 @@ import Gear from "../../assets/svgs/gear.svg";
 import Location from "../../assets/svgs/location.svg";
 import Navigate from "../../assets/svgs/navigate.svg";
 import Logo from "../../assets/coffee-logo.png";
+import Cart from "../../assets/svgs/cart-2.svg";
 import {Link} from "react-router-dom";
+
+import type {RootState} from "../../app/store";
+import {useSelector} from "react-redux";
 
 function Aside() {
   const [isOpenBars, setIsOpenBars] = React.useState(true);
+
+  const cartItems = useSelector((state: RootState) => state.cart.value);
+
   return (
     <>
       <div
@@ -42,6 +49,10 @@ function Aside() {
           </nav>
 
           <div className={styles.logoffArea}>
+            <Link className={styles.cartArea} to="/checkout">
+              <img src={Cart} />
+              <span>{cartItems ? cartItems.length : 0}</span>
+            </Link>
             <p>Done for the day?</p>
             <button className={styles.specialButton}>
               <img src={Navigate} />
@@ -52,6 +63,7 @@ function Aside() {
           </div>
         </div>
       </div>
+
       <div
         className={`${styles.overlay} ${
           isOpenBars ? "" : styles.overlayChange

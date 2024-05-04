@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Homepage.module.css";
 import Aside from "../../components/Aside/Aside";
 import OrdersTable from "../../components/OrdersTable/OrdersTable";
-import Search from "../../components/Search/Search";
+// import Search from "../../components/Search/Search";
 import OfferCard from "../../components/OfferCard/OfferCard";
 import VelvetItem from "../../assets/menu-items/velvet-mocha.webp";
 
@@ -12,7 +12,7 @@ function Homepage() {
       <Aside />
 
       <div className={styles.middle}>
-        <Search />
+        {/* <Search /> */}
         <OrdersTable />
         <div className={styles.specialtyCard}>
           <h3>Todays Special – only $6.99</h3>

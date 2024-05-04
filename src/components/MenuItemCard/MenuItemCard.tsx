@@ -1,8 +1,11 @@
-import React from "react";
 import styles from "./MenuItemCard.module.css";
 import Cart from "../../assets/svgs/cart.svg";
 
+import {useDispatch} from "react-redux";
+import {setCart} from "../../features/cart/cartSlice";
+
 type Props = {
+  id: number;
   drinkName: string;
   price: string;
   calories: number;
@@ -11,12 +14,14 @@ type Props = {
 };
 
 function MenuItemCard({
+  id,
   drinkName,
   price,
   calories,
   description,
   source,
 }: Props) {
+  const dispatch = useDispatch();
   return (
     <div className={styles.itemWrapper}>
       <span>
@@ -30,7 +35,20 @@ function MenuItemCard({
 
       <div className={styles.purchaseArea}>
         <em>{calories} cals</em>
-        <button>
+        <button
+          onClick={() => {
+            let tempArray: any[] = [];
+            if (localStorage.getItem("cartItems")) {
+              // @ts-ignore
+              tempArray = JSON.parse(localStorage.getItem("cartItems"));
+            }
+            tempArray = [...tempArray, id];
+
+            dispatch(setCart([...tempArray]));
+
+            localStorage.setItem("cartItems", JSON.stringify(tempArray));
+          }}
+        >
           <img src={Cart} />
           Add To Cart
         </button>

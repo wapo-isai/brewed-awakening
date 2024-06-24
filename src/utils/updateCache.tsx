@@ -1,4 +1,5 @@
 import {CartItem} from "../features/cart/cartSlice";
+import {UserResponse} from "../features/users/userSlice";
 
 export function updateCache(items: Array<CartItem>) {
   let newArr = [];
@@ -12,4 +13,12 @@ export function updateCache(items: Array<CartItem>) {
     }
   }
   localStorage.setItem("cartItems", JSON.stringify(newArr));
+}
+
+export function updateUserCache(userId: string, username: string) {
+  let user: UserResponse = {
+    userId: userId,
+    username: username,
+  };
+  localStorage.setItem("user", JSON.stringify(user));
 }

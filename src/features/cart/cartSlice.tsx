@@ -15,17 +15,8 @@ const initialState: CartState = {
   value: [],
 };
 
-// function updateCartCache() {
-//   for (const [key, value] of Object.entries(state.value)) {
-//     tempCheckoutItems.push({
-//       id: Number(key),
-//       amount: Number(value),
-//     });
-//   }
-//   localStorage.setItem("cartItems", JSON.stringify(state.value));
-// }
 export const cartSlice = createSlice({
-  name: "counter",
+  name: "cart",
   initialState,
   reducers: {
     addItem: (state, action: PayloadAction<CartItem>) => {

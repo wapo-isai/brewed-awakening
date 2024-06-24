@@ -5,6 +5,7 @@ import {useDispatch} from "react-redux";
 import {setCart} from "../../features/cart/cartSlice";
 import {getCartStateFromCache} from "../../utils/getCartStateFromCache";
 
+import CoffeeImage from "../../assets/menu-items/hazelnut-chai-fusion.webp";
 type Props = {
   id: number;
   drinkName: string;
@@ -23,6 +24,7 @@ function MenuItemCard({
   source,
 }: Props) {
   const dispatch = useDispatch();
+
   return (
     <div className={styles.itemWrapper}>
       <span>
@@ -31,7 +33,7 @@ function MenuItemCard({
       <h3>{price}</h3>
 
       <div className={styles.imgWrapper}>
-        <img src={source} />
+        <img src={CoffeeImage} />
       </div>
 
       <div className={styles.purchaseArea}>

@@ -1,0 +1,53 @@
+.authContainer {
+  background-color: white;
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 8px 16px;
+}
+
+.authInput {
+  margin: 4px 0 16px 0;
+  padding: 0 8px;
+  font-size: 14px;
+  display: block;
+  width: calc(100% - 16px);
+  height: 30px;
+  background-color: rgb(232, 232, 232);
+  color: black;
+  border: none;
+}
+
+.mainBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  font-size: 16px;
+  color: #ffffff;
+  padding: 10px 20px;
+  background-image: linear-gradient(
+    to right,
+    rgb(112, 204, 167),
+    rgb(124, 209, 148),
+    rgb(140, 214, 127)
+  );
+
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.bottomSpan {
+  font-size: 12px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.minorBtn {
+  background: none;
+  border: none;
+  color: blue;
+  padding: 0;
+  cursor: pointer;
+}

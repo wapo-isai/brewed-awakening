@@ -8,7 +8,6 @@ import Navigate from "../../assets/svgs/navigate.svg";
 import Logo from "../../assets/coffee-logo.png";
 import Cart from "../../assets/svgs/cart-2.svg";
 import {Link} from "react-router-dom";
-
 import type {RootState} from "../../app/store";
 import {useSelector} from "react-redux";
 
@@ -16,6 +15,8 @@ function Aside() {
   const [isOpenBars, setIsOpenBars] = React.useState(true);
 
   const cartItems = useSelector((state: RootState) => state.cart.value);
+
+  const userState = useSelector((state: RootState) => state.user.userState);
 
   return (
     <>
@@ -59,7 +60,7 @@ function Aside() {
               Logout
             </button>
 
-            <p>Isai Martinez</p>
+            <p>{userState.username ? userState.username : ""}</p>
           </div>
         </div>
       </div>

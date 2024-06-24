@@ -11,7 +11,7 @@ import VelvetMocha from "./assets/menu-items/velvet-mocha.webp";
 
 export const coffeeItems = [
   {
-    id: 1200,
+    id: 1,
     name: "Sunrise Roast",
     description: "A light roast coffee with citrusy and floral notes.",
     price: "8",
@@ -20,7 +20,7 @@ export const coffeeItems = [
   },
 
   {
-    id: 1201,
+    id: 2,
     name: "Velvet Mocha",
     description: "A rich, creamy blend of espresso and dark chocolate.",
     price: "10",
@@ -28,7 +28,7 @@ export const coffeeItems = [
     image: VelvetMocha,
   },
   {
-    id: 1202,
+    id: 3,
     name: "Honey Almond Brew",
     description: "Coffee with a touch of honey and almond milk.",
     price: "10",
@@ -36,7 +36,7 @@ export const coffeeItems = [
     image: HoneyAlmond,
   },
   {
-    id: 1203,
+    id: 4,
     name: "Toffee Nut Latte",
     description: "Espresso with steamed milk, toffee, and nutty flavors.",
     price: "8",
@@ -44,7 +44,7 @@ export const coffeeItems = [
     image: ToffeeNut,
   },
   {
-    id: 1204,
+    id: 5,
     name: "Midnight Espresso",
     description: "A classic, strong shot of espresso, perfect for late nights.",
     price: "12",
@@ -52,7 +52,7 @@ export const coffeeItems = [
     image: MidnightEspresso,
   },
   {
-    id: 1205,
+    id: 6,
     name: "Caramel Cloud Macchiato",
     description: "A frothy macchiato with a swirl of caramel.",
     price: "9",
@@ -60,7 +60,7 @@ export const coffeeItems = [
     image: CaramelCloud,
   },
   {
-    id: 1206,
+    id: 7,
     name: "Maple Pecan Cappuccino",
     description: "A cappuccino with maple syrup and pecan flavor.",
     price: "8",
@@ -68,7 +68,7 @@ export const coffeeItems = [
     image: MaplePecan,
   },
   {
-    id: 1207,
+    id: 8,
     name: "Coconut Cream Cold Brew",
     description: "Cold brew coffee with coconut cream and a hint of vanilla.",
     price: "13",
@@ -76,7 +76,7 @@ export const coffeeItems = [
     image: CoconutCream,
   },
   {
-    id: 1208,
+    id: 9,
     name: "Saffron Spiced Coffee",
     description: "Coffee with saffron, cardamom, and a dash of cinnamon.",
     price: "11",
@@ -84,7 +84,7 @@ export const coffeeItems = [
     image: SaffronSpiced,
   },
   {
-    id: 1209,
+    id: 10,
     name: "Hazelnut Chai Fusion",
     description: "A unique mix of chai spices and hazelnut-flavored coffee.",
     price: "9",

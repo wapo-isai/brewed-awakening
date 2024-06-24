@@ -11,7 +11,11 @@ import {Link} from "react-router-dom";
 import type {RootState} from "../../app/store";
 import {useSelector} from "react-redux";
 
+import {AuthContext} from "../../App";
+
 function Aside() {
+  const authContext = React.useContext(AuthContext);
+
   const [isOpenBars, setIsOpenBars] = React.useState(true);
 
   const cartItems = useSelector((state: RootState) => state.cart.value);
@@ -55,7 +59,13 @@ function Aside() {
               <span>{cartItems ? cartItems.length : 0}</span>
             </Link>
             <p>Done for the day?</p>
-            <button className={styles.specialButton}>
+            <button
+              className={styles.specialButton}
+              onClick={() => {
+                sessionStorage.removeItem("jwt");
+                authContext?.setIsAuthenticated(false);
+              }}
+            >
               <img src={Navigate} />
               Logout
             </button>

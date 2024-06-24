@@ -2,9 +2,18 @@ import React from "react";
 import styles from "./Orderspage.module.css";
 import Aside from "../../components/Aside/Aside";
 import OrdersTable from "../../components/OrdersTable/OrdersTable";
+import type {RootState} from "../../app/store";
+import {useSelector} from "react-redux";
 
 function Orderspage() {
-  const [progress, setProgress] = React.useState(8);
+  const [progress, setProgress] = React.useState(0);
+
+  const userState = useSelector((state: RootState) => state.user.userState);
+
+  React.useEffect(() => {
+    setProgress(userState.orders?.length || 0);
+  });
+
   const total = 20;
 
   return (

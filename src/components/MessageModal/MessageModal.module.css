@@ -1,0 +1,45 @@
+.messageModal {
+  position: absolute;
+  z-index: 3;
+  border: 1px solid black;
+  width: 400px;
+  /* height: 150px; */
+  margin: 0 auto;
+  margin-top: 10%;
+  background: white;
+  padding: 16px;
+  left: 0;
+  right: 0;
+  /* isolation: isolate; */
+}
+
+h3 {
+  padding: 0;
+  margin: 0;
+}
+
+.success h3 {
+  color: #270;
+}
+
+.error h3 {
+  color: #d8000c;
+}
+
+.closeBtn {
+  background-image: linear-gradient(
+    to right,
+    rgb(112, 204, 167),
+    rgb(124, 209, 148),
+    rgb(140, 214, 127)
+  );
+  border: none;
+  font-size: 16px;
+  color: #ffffff;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: 200px;
+  margin: 0 auto;
+
+  display: block;
+}

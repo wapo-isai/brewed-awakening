@@ -2,10 +2,9 @@ import styles from "./Menupage.module.css";
 
 import Aside from "../../components/Aside/Aside";
 import MenuItemCard from "../../components/MenuItemCard/MenuItemCard";
-import {useQuery, useQueryClient} from "@tanstack/react-query";
+import {useQuery} from "@tanstack/react-query";
 import {getDrinks} from "../../api/coffeeapi";
 
-import {coffeeItems} from "../../coffee-items";
 import {ProductResponse} from "../../types";
 
 function Menupage() {

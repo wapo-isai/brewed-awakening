@@ -29,7 +29,7 @@ function AuthPage() {
     if (authContext !== undefined && authContext.isAuthenticated) {
       navigate("/");
     }
-  }, []);
+  }, [authContext?.isAuthenticated]);
 
   const handleLogin = () => {
     axios

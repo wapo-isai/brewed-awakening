@@ -8,12 +8,15 @@ import {useDispatch} from "react-redux";
 import Logo from "../../assets/coffee-logo.png";
 import ChevronLeft from "../../assets/svgs/chevron-left.svg";
 import {useNavigate} from "react-router-dom";
+import MessageModal from "../../components/MessageModal/MessageModal";
 
 function CheckoutPage() {
   const cartItems = useSelector((state: RootState) => state.cart.value);
   const dispatch = useDispatch();
 
   const [totalPrice, setTotalPrice] = React.useState(0);
+
+  const [isModalOpen, setOpen] = React.useState<boolean>(true);
 
   const navigate = useNavigate();
 
@@ -31,10 +34,19 @@ function CheckoutPage() {
     setTotalPrice(tempTotal);
   }, [cartItems]);
 
-  console.log(cartItems);
-
   return (
     <>
+      {isModalOpen ? <MessageModal isSuccess={false} setOpen={setOpen} /> : ""}
+      {isModalOpen ? (
+        <div
+          className={`${styles.overlay} ${styles.overlayChange}`}
+          onClick={() => {
+            setOpen(false);
+          }}
+        ></div>
+      ) : (
+        ""
+      )}
       <div>
         <div className={styles.logoArea}>
           <div className={styles.flexContainer}>
@@ -94,7 +106,14 @@ function CheckoutPage() {
 
         <div className={styles.totalPrice}>
           <h3>Total Price ${totalPrice}</h3>
-          <button className={styles.specialButton}>Checkout</button>
+          <button
+            className={styles.specialButton}
+            onClick={() => {
+              setOpen((prev) => !prev);
+            }}
+          >
+            Checkout
+          </button>
         </div>
       </div>
     </>

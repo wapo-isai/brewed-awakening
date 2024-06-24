@@ -1,7 +1,44 @@
 import React from "react";
 import styles from "./OrdersTable.module.css";
+import axios from "axios";
+
+import type {RootState} from "../../app/store";
+import {useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
+import {setUserState} from "../../features/users/userSlice";
+import {UserResponse} from "../../features/users/userSlice";
 
 function OrdersTable() {
+  const userState = useSelector((state: RootState) => state.user.userState);
+
+  const dispatch = useDispatch();
+
+  React.useEffect(() => {
+    const jwtToken: string | null = sessionStorage.getItem("jwt");
+
+    axios
+      .get(
+        import.meta.env.VITE_USERS_API_URL +
+          `/${userState.userId}` +
+          "?fields=orders",
+        {
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${jwtToken}`,
+          },
+        }
+      )
+      .then((res) => {
+        const userInfo: UserResponse = {
+          userId: res.data.userId,
+          username: res.data.username,
+          orders: res.data.orders,
+        };
+
+        dispatch(setUserState(userInfo));
+      });
+  });
+
   return (
     <div className={styles.ordersContainer}>
       <h2>Orders</h2>
@@ -9,43 +46,29 @@ function OrdersTable() {
       <table className={styles.orderTable}>
         <thead>
           <tr>
-            <th>Restuarant</th>
-            <th>Order</th>
-            <th>Value</th>
-            <th>Delivery</th>
+            <th>Order Number</th>
+            <th>Product IDs</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Mackay St</td>
-            <td>Coffee 1</td>
-            <td>$35</td>
-            <td>02:03</td>
-          </tr>
-          <tr>
-            <td>Greenside St</td>
-            <td>Coffee 2</td>
-            <td>$40</td>
-            <td>04:12</td>
-          </tr>
-          <tr>
-            <td>Houston St</td>
-            <td>Coffee 3</td>
-            <td>$25</td>
-            <td>07:59</td>
-          </tr>
-          <tr>
-            <td>Mackay St</td>
-            <td>Coffee 4</td>
-            <td>$40</td>
-            <td>10:00</td>
-          </tr>
-          <tr>
-            <td>Greenside St</td>
-            <td>Coffee 5</td>
-            <td>$30</td>
-            <td>12:22</td>
-          </tr>
+          {userState.orders?.length
+            ? userState.orders?.map((val, indx) => {
+                return (
+                  <tr key={indx}>
+                    <td>{val.orderNumber.toString().slice(0, 8)}</td>
+                    <td>
+                      {val.productIds.map((id, ind) => {
+                        if (ind != val.productIds.length - 1) {
+                          return <span key={ind}>{id + ", "}</span>;
+                        } else {
+                          return <span key={ind}>{id}</span>;
+                        }
+                      })}
+                    </td>
+                  </tr>
+                );
+              })
+            : "You have not made any orders yet"}
         </tbody>
       </table>
     </div>

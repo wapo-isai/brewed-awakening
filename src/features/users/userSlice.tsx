@@ -24,7 +24,7 @@ export interface ProductResponse {
 export interface Orders {
   orderNumber: number;
   userId: string;
-  productIds: [];
+  productIds: Array<number>;
 }
 
 let userState: UserResponse = {
